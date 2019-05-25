@@ -1,0 +1,39 @@
+<h3><i class="fa fa-angle-right"></i> {{titulo}}</h3>
+<!-- BASIC FORM ELELEMNTS -->
+<div class="row mt">
+  <div class="col-lg-12">
+    <div class="form-panel">
+      <form class="form-horizontal style-form">
+        <div class="form-group">
+          <label for="nombre" class="col-sm-2 col-sm-2 control-label">Nombre</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" [(ngModel)]="deportes.nombre" name="nombre" >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="descripcion" class="col-sm-2 col-sm-2 control-label">Descripcion</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" [(ngModel)]="deportes.descripcion" name="descripcion">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="estActivo" class="col-sm-2 col-sm-2 control-label">Estado</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" [(ngModel)]="deportes.estActivo" name="estActivo">
+          </div>
+        </div>
+
+
+        <button class="btn btn-theme" role="button" (click)='create()' *ngIf="!deportes.id else elseBlock"><i class="fa fa-save"></i> Registrar</button>
+        <button type="button" class="btn btn-theme04" routerLink="/deportes"><i class="fa fa-times"></i> Cancel</button>
+
+        <ng-template #elseBlock>
+          <button class="btn btn-theme" role="button" (click)='update()' ><i class="fa fa-check-circle"></i> Editar</button>
+        </ng-template>
+      </form>
+    </div>
+  </div>
+  <!-- col-lg-12-->
+</div>
+<!-- /row -->
